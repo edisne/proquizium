@@ -25,3 +25,8 @@ Time to test your code! Execute the unit tests by running `ng test` with the hel
 Need more help with the Angular CLI? No worries! Just type `ng help` or visit the [Angular CLI Overview and Command Reference](https://angular.io/cli) page. They have all the information you need! 💡
 
 Enjoy coding with Proquizium! Happy coding! 👩‍💻👨‍💻
+
+## Running docker image
+
+If you by any chance have an access to our docker image, you can pull it my running a comnad `docker pull edisne/proquizium` and then run it by
+`docker run -p 4200:4200 proquizium` command and visiting http://localhost:4200/ after that
