@@ -4,7 +4,7 @@ import { Observable } from 'rxjs/internal/Observable';
 
 import { PanelModule } from 'primeng/panel';
 
-import { QuestionsService } from '../services/questions.service';
+import { QuestionsService } from '../../services/questions.service';
 import { QuestionComponent } from '../question/question.component';
 import { Question } from '../../interfaces/question';
 

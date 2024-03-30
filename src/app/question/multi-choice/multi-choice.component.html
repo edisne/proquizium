@@ -1,6 +1,6 @@
 @if (question) {
   <p-card header="{{ question.title }}">
-    <content class="flex justify-content-center">
+    <div class="flex justify-content-center">
       <p-multiSelect
         [options]="question.options"
         (onChange)="onOptionSelected($event)"
@@ -24,6 +24,6 @@
           </div>
         </ng-template>
       </p-multiSelect>
-    </content>
+    </div>
   </p-card>
 }

@@ -3,10 +3,10 @@ import { BehaviorSubject } from 'rxjs/internal/BehaviorSubject';
 import { map } from 'rxjs/internal/operators/map';
 import { Observable } from 'rxjs';
 
-import { Question } from '../../interfaces/question';
-import { Condition } from '../../interfaces/condition';
+import { Question } from '../interfaces/question';
+import { Condition } from '../interfaces/condition';
 
-import * as data from '../../assets/data.json';
+import * as data from '../assets/data.json';
 
 @Injectable({
   providedIn: 'root',
