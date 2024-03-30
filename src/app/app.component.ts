@@ -1,13 +1,37 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { MenuItem } from 'primeng/api/menuitem';
+import { MenuModule } from 'primeng/menu';
+import { PanelModule } from 'primeng/panel';
+import { MenubarModule } from 'primeng/menubar';
+import { ButtonModule } from 'primeng/button';
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from '@angular/common';
 
 @Component({
-  selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  imports: [
+    RouterModule,
+    MenuModule,
+    PanelModule,
+    MenubarModule,
+    ButtonModule,
+    CommonModule,
+  ],
+  selector: 'app-root',
+  template: `
+    <p-menubar [model]="menuItems" />
+    <div class="layout-content">
+      <router-outlet />
+    </div>
+  `,
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'proquizium';
+  menuItems: MenuItem[] = [
+    {
+      label: 'Proquizium',
+      icon: 'pi pi-question',
+    },
+  ];
 }

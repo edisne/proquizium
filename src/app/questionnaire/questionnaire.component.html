@@ -1,0 +1,10 @@
+<p-panel header="Questionaire">
+  @for (question of questions$ | async; track question.id) {
+    <div class="flex justify-content-center">
+      <app-question
+        [question]="question"
+        (userAnswer)="onUserAnswer()"
+      ></app-question>
+    </div>
+  }
+</p-panel>

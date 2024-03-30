@@ -1,0 +1,29 @@
+@if (question) {
+  <p-card header="{{ question.title }}">
+    <content class="flex justify-content-center">
+      <p-multiSelect
+        [options]="question.options"
+        (onChange)="onOptionSelected($event)"
+        optionLabel="option"
+        [showClear]="true"
+        [placeholder]="'Select options'"
+        (onClear)="onClear()"
+      >
+        <ng-template let-value pTemplate="selectedItems">
+          <div
+            class="inline-flex align-items-center gap-2 px-1"
+            *ngFor="let option of value; trackBy: identify"
+          >
+            <div>{{ option.verbose_name }}</div>
+          </div>
+          <div *ngIf="!value || value?.length === 0">Select Options</div>
+        </ng-template>
+        <ng-template let-option pTemplate="item">
+          <div class="flex align-items-center gap-2">
+            <div>{{ option.verbose_name }}</div>
+          </div>
+        </ng-template>
+      </p-multiSelect>
+    </content>
+  </p-card>
+}

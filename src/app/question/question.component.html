@@ -1,0 +1,28 @@
+@if (question) {
+  <div class="flex flex-column">
+    <div class="flex m-2 flex-column">
+      @if (question.type === 'single_choice' && question.is_triggered) {
+        <app-single-choice
+          [question]="question"
+          (userAnswer)="onSingleSelect()"
+        ></app-single-choice>
+      }
+    </div>
+    <div class="flex m-2 flex-column">
+      @if (question.type === 'multiple_choice' && question.is_triggered) {
+        <app-multi-choice
+          [question]="question"
+          (userAnswer)="onMultiSelect()"
+        ></app-multi-choice>
+      }
+    </div>
+    <div class="flex m-2 flex-column col-6">
+      @if (question.type === 'multi_line_text' && question.is_triggered) {
+        <app-multi-line-input
+          [question]="question"
+          (userAnswer)="onMultiLineInput()"
+        ></app-multi-line-input>
+      }
+    </div>
+  </div>
+}
